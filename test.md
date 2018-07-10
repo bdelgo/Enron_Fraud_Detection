@@ -45,14 +45,28 @@ decision tree algorithm.
 
 **Table-1: SelectKBest Scores**
 
-  exercised\_stock\_options   24.8   total\_stock\_value    24.2   bonus                         20.8
-  --------------------------- ------ ---------------------- ------ ----------------------------- ------
-  salary                      18.3   fraction\_to\_poi      16.4   deferred\_income              11.5
-  long\_term\_incentive       9.9    restricted\_stock      9.2    total\_payments               8.8
-  loan\_advances              7.2    expenses               6.1    from\_poi\_to\_this\_person   5.2
-  other                       4.2    fraction\_from\_poi    3.1    from\_this\_person\_to\_poi   2.4
-  director\_fees              2.1    to\_messages           1.6    deferral\_payments            0.2
-  from\_messages              0.2    restricted\_stock\_d   0.1                                  
+  Feature                       Score
+  ----------------------------- -------
+  exercised\_stock\_options     24.8
+  salary                        18.3
+  long\_term\_incentive         9.9
+  loan\_advances                7.2
+  other                         4.2
+  director\_fees                2.1
+  from\_messages                0.2
+  total\_stock\_value           24.2
+  fraction\_to\_poi             16.4
+  restricted\_stock             9.2
+  expenses                      6.1
+  fraction\_from\_poi           3.1
+  to\_messages                  1.6
+  restricted\_stock\_d          0.1
+  bonus                         20.8
+  deferred\_income              11.5
+  total\_payments               8.8
+  from\_poi\_to\_this\_person   5.2
+  from\_this\_person\_to\_poi   2.4
+  deferral\_payments            0.2
 
 **Table-2: Number of missing values for each feature**
 
