@@ -45,24 +45,54 @@ decision tree algorithm.
 
 **Table-1: SelectKBest Scores**
 
-  |Feature                      |Score
-  |-----------------------------|-------
+  |Feature                       |Score
+  |----------------------------- |-------
   |exercised\_stock\_options     |24.8
   |salary                        |18.3
   |long\_term\_incentive         |9.9
   |loan\_advances                |7.2
-  
+  |other                         |4.2
+  |director\_fees                |2.1
+  |from\_messages                |0.2
+  |total\_stock\_value           |24.2
+  |fraction\_to\_poi             |16.4
+  |restricted\_stock             |9.2
+  |expenses                      |6.1
+  |fraction\_from\_poi           |3.1
+  |to\_messages                  |1.6
+  |restricted\_stock\_d          |0.1
+  |bonus                         |20.8
+  |deferred\_income              |11.5
+  |total\_payments               |8.8
+  |from\_poi\_to\_this\_person   |5.2
+  |from\_this\_person\_to\_poi   |2.4
+  |deferral\_payments            |0.2
 
 **Table-2: Number of missing values for each feature**
 
-  exercised\_stock\_options   42    total\_stock\_value    18    bonus                         62
-  --------------------------- ----- ---------------------- ----- ----------------------------- -----
-  salary                      49    fraction\_to\_poi      57    deferred\_income              95
-  long\_term\_incentive       78    restricted\_stock      34    total\_payments               20
-  loan\_advances              140   expenses               49    from\_poi\_to\_this\_person   57
-  other                       52    fraction\_from\_poi    57    from\_this\_person\_to\_poi   57
-  director\_fees              127   to\_messages           57    deferral\_payments            105
-  from\_messages              57    restricted\_stock\_d   126                                 
+  |Feature                       |Number of Missing Values
+  |----------------------------- |------------------------
+  |exercised\_stock\_options     |42
+  |salary                        |49
+  |long\_term\_incentive         |78
+  |loan\_advances                |140
+  |other                         |52
+  |director\_fees                |127
+  |from\_messages                |57
+  |total\_stock\_value           |18
+  |fraction\_to\_poi             |57
+  |restricted\_stock             |34
+  |expenses                      |49
+  |fraction\_from\_poi           |57
+  |to\_messages                  |57
+  |restricted\_stock\_d          |126
+  |bonus                         |62
+  |deferred\_income              |95
+  |total\_payments               |20
+  |from\_poi\_to\_this\_person   |57
+  |from\_this\_person\_to\_poi   |57
+  |deferral\_payments            |105
+
 
 **best\_features** is the function that selects the best combination of
 features. It works as follow:
@@ -104,10 +134,11 @@ Table-3
 
 **Table-3: Best Results for each algorithm**
 
-  **Algorithm**   **Features**                                     **Accuracy**   **Precision**   **Recall**
-  --------------- ------------------------------------------------ -------------- --------------- ------------
-  Decision Tree   \'bonus\', \'fraction\_to\_poi\'                 0.82           0.57            0.46
-  Naïve Bayes     \'total\_stock\_value\', \'fraction\_to\_poi\'   0.87           0.69            0.30
+  |Algorithm    |Features                              |Accu.|Prec.|Recall
+  |-------------|--------------------------------------|-----|-----|------
+  |Decision Tree|bonus, fraction\_to\_poi              |0.82 |0.57 |0.46
+  |Naïve Bayes  |total\_stock\_value, fraction\_to\_poi|0.87 |0.69 |0.30
+
 
 Parameter Tuning
 ================
@@ -146,25 +177,25 @@ features = \[\'bonus\', \'fraction\_to\_poi\'\] and different values of
 
 **Table-4: Tuning Decision Tree with different Min-Sample-Split values**
 
-  **Min-Sample-Split**   **accuracy**   **precision**   **recall**
-  ---------------------- -------------- --------------- ------------
-  2                      0.776          0.433           0.395
-  3                      0.790          0.470           0.381
-  4                      0.784          0.450           0.355
-  5                      0.780          0.438           0.356
-  6                      0.781          0.440           0.346
-  7                      0.782          0.438           0.316
-  8                      0.788          0.443           0.358
-  9                      0.781          0.438           0.331
-  10                     0.787          0.457           0.347
-  11                     0.796          0.487           0.357
-  12                     0.809          0.529           0.393
-  13                     0.821          0.566           0.459
-  14                     0.822          0.566           0.464
-  15                     0.821          0.565           0.447
-  16                     0.810          0.532           0.405
-  17                     0.801          0.502           0.342
-  18                     0.792          0.468           0.308
+  |Min-Sample-Split     |accuracy   |precision  |recall
+  |---------------------|-----------|-----------|------------
+  |2                    |  0.776    |   0.433   |   0.395
+  |3                    |  0.790    |   0.470   |   0.381
+  |4                    |  0.784    |   0.450   |   0.355
+  |5                    |  0.780    |   0.438   |   0.356
+  |6                    |  0.781    |   0.440   |   0.346
+  |7                    |  0.782    |   0.438   |   0.316
+  |8                    |  0.788    |   0.443   |   0.358
+  |9                    |  0.781    |   0.438   |   0.331
+  |10                   |  0.787    |   0.457   |   0.347
+  |11                   |  0.796    |   0.487   |   0.357
+  |12                   |  0.809    |   0.529   |   0.393
+  |13                   |  0.821    |   0.566   |   0.459
+  |14                   |  0.822    |   0.566   |   0.464
+  |15                   |  0.821    |   0.565   |   0.447
+  |16                   |  0.810    |   0.532   |   0.405
+  |17                   |  0.801    |   0.502   |   0.342
+  |18                   |  0.792    |   0.468   |   0.308
 
 Validation
 ==========
@@ -212,22 +243,29 @@ Accuracy.
 
 **Table-5: Decision Tree Results for different combination of features**
 
-  **Min-Sample-Split**   **Feature combination**                                              **Feature importance**   **accuracy**   **precision**   **recall**
-  ---------------------- -------------------------------------------------------------------- ------------------------ -------------- --------------- ------------
-  2                      (\'exercised\_stock\_options\', \'total\_payments\', \'expenses\')   0.338, 0.303, 0.359      0.830          0.415           0.472
-  5                      (\'bonus\', \'expenses\')                                            0.338, 0.662             0.779          0.401           0.439
-  7                      (\'exercised\_stock\_options\', \'total\_payments\', \'expenses\')   0.608, 0.089, 0.302      0.837          0.433           0.451
-  10                     (\'exercised\_stock\_options\', \'total\_payments\')                 0.682, 0.318             0.852          0.484           0.487
-  12                     (\'bonus\', \'fraction\_to\_poi\')                                   0.633, 0.367             0.808          0.527           0.390
-  13                     (\'bonus\', \'fraction\_to\_poi\')                                   0.619, 0.381             0.822          0.566           0.463
+|Min.S.S  |Features                   |Importance         |Accur. |Prec.  |Rec.
+|---------|-------------------------  |-------------------|-------|-------|-----
+|2        |exercised\_stock\_options  |0.338, 0.303, 0.359|0.830  |0.415  |0.472
+|         |total\_payments, expenses  |                   |       |       |
+|5        |bonus, expenses            |0.338, 0.662       |0.779  |0.401  |0.439
+|7        |exercised\_stock\_options, |0.608, 0.089, 0.302|0.837  |0.433  |0.451
+|         |total\_payments, expenses  |                   |       |       |
+|10       |exercised\_stock\_options, |0.682, 0.318       |0.852  |0.484  |0.487
+|         |total\_payments            |                   |       |       |      
+|12       |bonus, fraction\_to\_poi   |0.633, 0.367       |0.808  |0.527  |0.390
+|13       |bonus, fraction\_to\_poi   |0.619, 0.381       |0.822  |0.566  |0.463
 
 **Table-6: Naïve Bayes Results for different combination of features**
 
-  **Feature combination**                                                                                                                           **accuracy**   **precision**   **recall**
-  ------------------------------------------------------------------------------------------------------------------------------------------------- -------------- --------------- ------------
-  \'total\_stock\_value\', \'fraction\_to\_poi\'                                                                                                    0.869          0.691           0.300
-  (\'exercised\_stock\_options\', \'total\_stock\_value\', \'bonus\')                                                                               0.843          0.486           0.351
-  (\'total\_stock\_value\', \'bonus\', \'restricted\_stock\', \'expenses\')                                                                         0.859          0.511           0.342
-  (\'total\_stock\_value\', \'bonus\', \'fraction\_to\_poi\', \'restricted\_stock\', \'expenses\')                                                  0.859          0.511           0.342
-  (\'exercised\_stock\_options\', \'total\_stock\_value\', \'bonus\', \'fraction\_to\_poi\', \'restricted\_stock\', \'expenses\')                   0.856          0.495           0.343
-  (\'exercised\_stock\_options\', \'total\_stock\_value\', \'bonus\', \'salary\', \'fraction\_to\_poi\', \'long\_term\_incentive\', \'expenses\')   0.845          0.449           0.352
+|Feature combination                                      |accur. |prec.  |rec.
+|---------------------------------------------------------|-------|-------|-----
+|total\_stock\_value, fraction\_to\_poi                   |0.869  |0.691  |0.300
+|exercised\_stock\_options, total\_stock\_value, bonus    |0.843  |0.486  |0.351
+|'total\_stock\_value, bonus, restricted\_stock, expenses |0.859  |0.511  |0.342
+|total\_stock\_value, bonus, fraction\_to\_poi,           |0.859  |0.511  |0.342
+|restricted\_stock, expenses                              |       |       |       
+|exercised\_stock\_options, total\_stock\_value, bonus,   |0.856  |0.495  |0.343
+|fraction\_to\_poi, restricted\_stock, expenses           |       |       |               
+|exercised\_stock\_options, total\_stock\_value, bonus,   |0.845  |0.449  |0.352
+|salary, fraction\_to\_poi, long\_term\_incentive,        |       |       |
+|expenses                                                 |       |       |
