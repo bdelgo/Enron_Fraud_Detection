@@ -244,7 +244,7 @@ Accuracy.
 **Table-5: Decision Tree Results for different combination of features**
 
 |Min.S.S  |Features                                             |Importance         |Accur. |Prec.  |Rec.
-|---------|---------------------------|-------------------------|-------------------|-------|-------|----
+|---------|-----------------------------------------------------|-------------------|-------|-------|----
 |2        |exercised\_stock\_options,total\_payments, expenses  |0.338, 0.303, 0.359|0.830  |0.415  |0.472
 |5        |bonus, expenses                                      |0.338, 0.662       |0.779  |0.401  |0.439
 |7        |exercised\_stock\_options, total\_payments, expenses |0.608, 0.089, 0.302|0.837  |0.433  |0.451
