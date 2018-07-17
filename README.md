@@ -136,7 +136,7 @@ Table-3
 
   |Algorithm    |Features                              |Accu.|Prec.|Recall
   |-------------|--------------------------------------|-----|-----|------
-  |Decision Tree|bonus, fraction\_to\_poi              |0.82 |0.57 |0.46
+  |Decision Tree|bonus, fraction\_to\_poi              |0.87 |0.65 |0.46
   |Naïve Bayes  |total\_stock\_value, fraction\_to\_poi|0.87 |0.69 |0.30
 
 
@@ -191,7 +191,7 @@ features = \[\'bonus\', \'fraction\_to\_poi\'\] and different values of
   |11                   |  0.796    |   0.487   |   0.357
   |12                   |  0.809    |   0.529   |   0.393
   |13                   |  0.821    |   0.566   |   0.459
-  |14                   |  0.822    |   0.566   |   0.464
+  |14                   |  0.866    |   0.649   |   0.464
   |15                   |  0.821    |   0.565   |   0.447
   |16                   |  0.810    |   0.532   |   0.405
   |17                   |  0.801    |   0.502   |   0.342
@@ -250,7 +250,7 @@ Accuracy.
 |7        |exercised\_stock\_options, total\_payments, expenses |0.608, 0.089, 0.302|0.837  |0.433  |0.451
 |10       |exercised\_stock\_options, total\_payments           |0.682, 0.318       |0.852  |0.484  |0.487
 |12       |bonus, fraction\_to\_poi                             |0.633, 0.367       |0.808  |0.527  |0.390
-|13       |bonus, fraction\_to\_poi                             |0.619, 0.381       |0.822  |0.566  |0.463
+|13       |bonus, fraction\_to\_poi                             |0.619, 0.381       |0.866  |0.649  |0.463
 
 **Table-6: Naïve Bayes Results for different combination of features**
 
