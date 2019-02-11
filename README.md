@@ -20,10 +20,9 @@ Features
 First of all, I removed "email\_address" from the features, because it
 contains no useful information and it causes "could not convert string
 to float" error in FeatureFormat function. I also removed
-"shared\_receipt\_with\_poi" because I knew from "Intro to Machine
-Learning" that this feature basically is encoding the 'poi' label for
-each person as a feature! Also knowing from "Intro to Machine Learning",
-I added two new features: \"fraction\_from\_poi\" and
+"shared\_receipt\_with\_poi" because this feature basically is encoding the 'poi' label for
+each person as a feature!
+I also added two new features: \"fraction\_from\_poi\" and
 \"fraction\_to\_poi\" which are basically scaled features: first one is
 \"from\_poi\_to\_this\_person\" divided by \"to\_messages\", and the
 second one is \"from\_this\_person\_to\_poi\" divide by
@@ -119,8 +118,7 @@ improve the results!
 Algorithms & Modeling
 =====================
 
-Since the Enron Fraud Detection is a classification problem (not a
-regression), I started with two classification algorithms:
+I started with two classification algorithms:
 Decision-Tree, and Naïve-Bayes. Then for each algorithm, and for every
 combination of sub-features, I calculated the evaluation metrics. In
 Table-5 and Table-6, you can see some of the results for each algorithm
